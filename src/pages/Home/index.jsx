@@ -1,13 +1,14 @@
-import { useHistory } from "react-router-dom";
+import { useHistory } from 'react-router-dom'
+import Navbar from '../../components/Navbar'
 
 const Home = () => {
-  const router = useHistory();
+  const router = useHistory()
 
   return (
     <div>
-      <p>Home</p>
+      <Navbar />
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
