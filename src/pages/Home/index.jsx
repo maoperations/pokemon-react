@@ -7,10 +7,11 @@ const Home = () => {
   const router = useHistory()
 
   return (
-    <div>
+    <>
+      <h1 className='text-4xl text-center font-bold m-5'>Pokédek</h1>
       <Navbar />
       <Card />
-    </div>
+    </>
   )
 }
 
