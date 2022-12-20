@@ -1,13 +1,13 @@
 const Navbar = () => {
   const link = [
-    ['I', '/gen-i'],
-    ['II', '/geb-ii'],
-    ['III', '/gen-iii'],
-    ['IV', '/gen-iv'],
-    ['V', '/gen-v'],
-    ['VI', '/gen-vi'],
-    ['VII', '/gen-vii'],
-    ['VIII', '/gen-viii']
+    { name: 'I', router: '/gen-i' },
+    { name: 'II', router: '/geb-ii' },
+    { name: 'III', router: '/gen-iii' },
+    { name: 'IV', router: '/gen-iv' },
+    { name: 'V', router: '/gen-v' },
+    { name: 'VI', router: '/gen-vi' },
+    { name: 'VII', router: '/gen-vii' },
+    { name: 'VIII', router: '/gen-viii' }
   ]
   return (
     <div className='blok'>
@@ -16,13 +16,13 @@ const Navbar = () => {
       </h1>
       <div className='table m-auto'>
         <nav className='flex justify-center bg-white rounded-lg shadow-lg'>
-          {link.map((title, index) => (
+          {link.map((item, index) => (
             <a
-              href={title[1]}
+              href={item.router}
               key={index}
               className='flex-wrap text-lg font-bold p-4 rounded-lg hover:bg-slate-100'
             >
-              {title[0]}
+              {item.name}
             </a>
           ))}
         </nav>

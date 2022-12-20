@@ -1,4 +1,4 @@
-import { useInfiniteQuery } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 
 const fetchList = async ({
   type = ''
@@ -10,7 +10,7 @@ const fetchList = async ({
 };
 
 const useGetList = ({ description, fullTime, location }) => {
-  return useInfiniteQuery({
+  return useQuery({
     queryKey: ["getList"],
     queryFn: ({ pageParam }) =>
       fetchList({ description, fullTime, location, pageParam }),

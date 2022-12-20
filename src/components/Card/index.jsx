@@ -1,4 +1,4 @@
-const Card = ({ id }) => {
+const Card = () => {
   let arr = [
     {
       name: 'Noteworthy technology acquisitions 2021',
@@ -17,20 +17,31 @@ const Card = ({ id }) => {
     }
   ]
   return (
-    <div className='flex gap-5 m-12 justify-center pointer-events-auto'>
-      {arr.map((i, index) => (
-        <a
-          key={index}
-          className='block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700'
-        >
-          <h5 className='mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white'>
-            {i.name}
-          </h5>
-          <p className='font-normal text-gray-700 dark:text-gray-400'>
-            {i.description}
-          </p>
-        </a>
-      ))}
+    <div class='container my-12 mx-auto px-4 md:px-12'>
+      <div class='flex flex-wrap -mx-1 lg:-mx-4'>
+        {arr.map((item, index) => (
+          <div class='my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3'>
+            <article class='overflow-hidden rounded-lg shadow-lg'>
+              <a href='#'>
+                <img
+                  alt='Placeholder'
+                  class='block h-auto w-full'
+                  src='https://picsum.photos/600/400/?random'
+                />
+              </a>
+
+              <header class='flex items-center justify-between leading-tight p-2 md:p-4'>
+                <h1 class='text-lg'>
+                  <a class='no-underline hover:underline text-black' href='#'>
+                    Article Title
+                  </a>
+                </h1>
+                <p class='text-grey-darker text-sm'>11/1/19</p>
+              </header>
+            </article>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
