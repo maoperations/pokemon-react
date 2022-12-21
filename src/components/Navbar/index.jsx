@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
   const link = [
     { name: "I", router: "/gen-1" },
-    { name: "II", router: "/geb-2" },
+    { name: "II", router: "/gen-2" },
     { name: "III", router: "/gen-3" },
     { name: "IV", router: "/gen-4" },
     { name: "V", router: "/gen-5" },
@@ -17,13 +19,13 @@ const Navbar = () => {
       <div className="table m-auto">
         <nav className="flex justify-center bg-white rounded-lg shadow-lg">
           {link.map((item, index) => (
-            <a
+            <Link
               href={item.router}
               key={index}
               className="flex-wrap text-lg font-bold p-4 rounded-lg hover:bg-slate-100"
             >
               {item.name}
-            </a>
+            </Link>
           ))}
         </nav>
       </div>
