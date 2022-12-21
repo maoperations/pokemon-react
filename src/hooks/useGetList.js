@@ -1,20 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
 
-const fetchList = async ({
-  type = ''
-}) => {
-  const result = await fetch(
-    `https://pokeapi.co/api/v2/type/${type}`
-  );
+const fetchList = async (type) => {
+  const result = await fetch(`https://pokeapi.co/api/v2/generation/${type}`);
   return result.json();
 };
 
-const useGetList = ({ description, fullTime, location }) => {
-  return useQuery({
-    queryKey: ["getList"],
-    queryFn: ({ pageParam }) =>
-      fetchList({ description, fullTime, location, pageParam }),
-    getNextPageParam: (lastPage) => lastPage.nextCursor,
+const useGetList = (type) => {
+  return useQuery(["generation", { type: type }], () => {
+    return fetchList(type);
   });
 };
 
