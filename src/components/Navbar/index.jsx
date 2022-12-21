@@ -2,14 +2,14 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const link = [
-    { name: "I", router: "/gen-1" },
-    { name: "II", router: "/gen-2" },
-    { name: "III", router: "/gen-3" },
-    { name: "IV", router: "/gen-4" },
-    { name: "V", router: "/gen-5" },
-    { name: "VI", router: "/gen-6" },
-    { name: "VII", router: "/gen-7" },
-    { name: "VIII", router: "/gen-8" },
+    { name: "I", router: "/gen-i" },
+    { name: "II", router: "/gen-ii" },
+    { name: "III", router: "/gen-iii" },
+    { name: "IV", router: "/gen-iv" },
+    { name: "V", router: "/gen-v" },
+    { name: "VI", router: "/gen-vi" },
+    { name: "VII", router: "/gen-vii" },
+    { name: "VIII", router: "/gen-viii" },
   ];
   return (
     <div className="blok">
@@ -20,7 +20,7 @@ const Navbar = () => {
         <nav className="flex justify-center bg-white rounded-lg shadow-lg">
           {link.map((item, index) => (
             <Link
-              href={item.router}
+              to={item.router}
               key={index}
               className="flex-wrap text-lg font-bold p-4 rounded-lg hover:bg-slate-100"
             >

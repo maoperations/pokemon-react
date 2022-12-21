@@ -1,14 +1,12 @@
+import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
 import Navbar from "../../components/Navbar";
 import Card from "../../components/Card";
 import useGetList from "../../hooks/useGetList";
 
-const Home = () => {
-  const router = useHistory();
-  const getTypePokemon = router.location.pathname.replace("/gen-", "");
-
-  const { data } = useGetList(getTypePokemon);
+const Home = ({ type }) => {
+  const { data } = useGetList(type);
 
   return (
     <>
