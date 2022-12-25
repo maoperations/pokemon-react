@@ -1,12 +1,24 @@
-const Card = ({ id, title, color, image, types }) => {
+import React from "react";
+import { TYPES_COLOR } from "../../constants/colors";
+
+const Card = ({ id, title, image, types, onOpen }) => {
+  const color = TYPES_COLOR[types[0].type.name];
+
   return (
-    <div className="p-5 rounded-2xl bg-green-400 shadow-xl shadow-green-200">
+    <div
+      className="p-5 rounded-2xl shadow-xl"
+      style={{ backgroundColor: color }}
+      onClick={onOpen}
+    >
       <div className="flex items-center justify-between">
         <div>
-          <p className="text-3xl text-white font-bold capitalize">{title}</p>
+          <p className="!text-4xl text-white font-bold capitalize">{title}</p>
           <div className="flex flex-col items-start gap-2 mt-5">
-            {types.map((type) => (
-              <div className="bg-[rgba(255,255,255,0.5)] text-white font-bold py-2 px-6 rounded-full capitalize">
+            {types.map((type, idx) => (
+              <div
+                className="bg-[rgba(255,255,255,0.5)] text-white font-bold py-2 px-6 rounded-full capitalize"
+                key={idx}
+              >
                 <p>{type.type.name}</p>
               </div>
             ))}
