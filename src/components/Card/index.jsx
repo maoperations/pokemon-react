@@ -10,7 +10,7 @@ const Card = ({ id, title, image, types, onOpen }) => {
       style={{ backgroundColor: color }}
       onClick={onOpen}
     >
-      <div className="flex items-center justify-between">
+      <div className="relative flex items-center justify-between">
         <div>
           <p className="!text-4xl text-white font-bold capitalize">{title}</p>
           <div className="flex flex-col items-start gap-2 mt-5">
@@ -25,8 +25,12 @@ const Card = ({ id, title, image, types, onOpen }) => {
           </div>
         </div>
 
-        <div>
+        <div className="flex justify-end w-[50%]">
           <img className="w-52 h-52" src={image} />
+        </div>
+
+        <div className="absolute bottom-full left-[calc(100%-30px)]">
+          <p className="text-[hsla(0,0%,100%,.2)] text-3xl font-bold">#{id}</p>
         </div>
       </div>
     </div>

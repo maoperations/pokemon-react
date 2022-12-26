@@ -1,6 +1,8 @@
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const Navbar = () => {
+  const router = useHistory();
+
   const link = [
     { name: "I", router: "/gen-i" },
     { name: "II", router: "/gen-ii" },
@@ -11,23 +13,25 @@ const Navbar = () => {
     { name: "VII", router: "/gen-vii" },
     { name: "VIII", router: "/gen-viii" },
   ];
+
   return (
-    <div className="blok">
-      <h1 className="text-2xl text-purple-800 text-center font-bold mb-5">
+    <div>
+      <p className="text-2xl text-purple-800 text-center font-bold mb-5">
         Select Generation
-      </h1>
-      <div className="table m-auto">
-        <nav className="flex justify-center bg-white rounded-lg shadow-lg">
+      </p>
+
+      <div className="flex items-center justify-center">
+        <div className="flex bg-white rounded-lg shadow-lg">
           {link.map((item, index) => (
-            <Link
-              to={item.router}
+            <p
               key={index}
-              className="flex-wrap text-lg font-bold p-4 rounded-lg hover:bg-slate-100"
+              onClick={() => router.push(item.router)}
+              className="text-lg font-bold px-3 py-3 rounded-lg hover:bg-slate-100 cursor-pointer"
             >
               {item.name}
-            </Link>
+            </p>
           ))}
-        </nav>
+        </div>
       </div>
     </div>
   );
