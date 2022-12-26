@@ -1,0 +1,20 @@
+export const TYPES_COLOR = {
+  grass: "#48d0b0",
+  fire: "#fb6c6c",
+  water: "#609fb5",
+  bug: "#c3ce75",
+  flying: "#bab0d5",
+  normal: "#c2c2a1",
+  poison: "#7c538c",
+  electric: "#ffd86f",
+  ground: "#b1736c",
+  fairy: "#f469a9",
+  fighting: "#d6b591",
+  psychic: "#9b7fa6",
+  rock: "#a6aab6",
+  ice: "#7fccec",
+  ghost: "#7c538c",
+  dragon: "#f9be00",
+  steel: "#ccccde",
+  dark: "#333"
+};
