@@ -215,7 +215,7 @@ const Modals = ({ show, data, onClose }) => {
                       </div>
                     ))
                   ) : (
-                    <p>POKMON NOT EVEOLUTIPON</p>
+                    <p className="font-bold text-center mt-1 text-2xl">Pokemon not evolution</p>
                   )}
                 </div>
               </Tab>
