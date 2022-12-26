@@ -15,4 +15,6 @@ export const TYPES_COLOR = {
   ice: "#7fccec",
   ghost: "#7c538c",
   dragon: "#f9be00",
+  steel: "#ccccde",
+  dark: "#333"
 };

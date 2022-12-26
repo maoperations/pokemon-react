@@ -44,7 +44,6 @@ const Home = ({ type }) => {
   useEffect(() => {
     setPokemons([])
   }, [router.location.pathname])
-
   return (
     <>
       <h1 className='text-4xl text-center font-bold m-5'>Pokédek</h1>
@@ -56,7 +55,11 @@ const Home = ({ type }) => {
             key={idx}
             id={pokemon.id}
             title={pokemon.name}
-            image={pokemon.sprites.other.dream_world.front_default}
+            image={
+              pokemon.sprites.other.dream_world.front_default
+                ? pokemon.sprites.other.dream_world.front_default
+                : pokemon.sprites.other['official-artwork'].front_default
+            }
             types={pokemon.types}
             onOpen={() => onOpenModal(pokemon)}
           />
